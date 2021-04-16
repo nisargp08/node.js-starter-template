@@ -1,9 +1,17 @@
 import express from 'express';
+import { json, urlencoded } from 'body-parser';
+import morgan from 'morgan';
+import cors from 'cors';
 
+// Initialize express app
 const app = express();
 
-app.listen(3000, () => {
-  console.log('Server is live and listening on : 3000');
-});
+// Middlewares
+app.use(cors());
+app.use(json());
+app.use(urlencoded({ extended: true }));
+app.use(morgan('dev'));
 
-export default app;
+app.listen(5000, () => {
+  console.log('Server is live and listening on : 5000');
+});
