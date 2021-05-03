@@ -10,8 +10,8 @@ const app = express();
 // Middlewares
 app.use(cors());
 app.use(compression({
-  level : 6,
-}))
+  level: 6,
+}));
 app.use(json());
 app.use(urlencoded({ extended: true }));
 app.use(morgan('dev'));
